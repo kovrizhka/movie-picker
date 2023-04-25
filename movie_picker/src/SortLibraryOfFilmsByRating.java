@@ -10,6 +10,6 @@ public class SortLibraryOfFilmsByRating implements Comparator<Film> {
         if (delta < 0){
             return -1;
         }
-            return 0;
+        return 0 ;
     }
 }
