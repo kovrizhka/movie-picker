@@ -1,8 +1,6 @@
-package main.java;
-import main.java.entity.Film;
-import main.java.entity.FilmLibrary;
-
-import java.util.ArrayList;
+package main;
+import main.entity.Film;
+import main.entity.FilmLibrary;
 
 public class Main {
     public static void main(String[] args) {

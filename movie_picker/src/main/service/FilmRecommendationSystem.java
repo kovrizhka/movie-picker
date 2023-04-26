@@ -1,8 +1,8 @@
-package main.java.service;
+package main.service;
 
-import main.java.entity.Film;
-import main.java.entity.FilmLibrary;
-import main.java.entity.User;
+import main.entity.Film;
+import main.entity.User;
+import main.entity.FilmLibrary;
 
 import java.util.ArrayList;
 

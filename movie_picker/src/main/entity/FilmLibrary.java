@@ -1,6 +1,6 @@
-package main.java.entity;
+package main.entity;
 
-import main.java.service.SortLibraryOfFilmsByRating;
+import main.service.SortLibraryOfFilmsByRating;
 
 import java.util.ArrayList;
 import java.util.Collections;

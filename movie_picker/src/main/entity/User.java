@@ -1,4 +1,4 @@
-package main.java.entity;
+package main.entity;
 
 import java.util.ArrayList;
 import java.util.Scanner;

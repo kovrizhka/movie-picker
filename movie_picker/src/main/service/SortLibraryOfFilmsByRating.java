@@ -1,6 +1,6 @@
-package main.java.service;
+package main.service;
 
-import main.java.entity.Film;
+import main.entity.Film;
 
 import java.util.Comparator;
 

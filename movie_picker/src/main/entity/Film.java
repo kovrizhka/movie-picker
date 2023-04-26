@@ -1,4 +1,4 @@
-package main.java.entity;
+package main.entity;
 
 public class Film {
     private String title;
