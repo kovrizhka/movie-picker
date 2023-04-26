@@ -1,3 +1,5 @@
+package main.java.entity;
+
 public class Film {
     private String title;
     private String genre;
@@ -5,7 +7,7 @@ public class Film {
     private int sumOfRate;
     private double userRate;
 
-    public Film (String title, String genre, double rating, int sumOfRate) {      // конструктор для объектов (фильмов). Объекты созданы в классе FilmLibrary
+    public Film (String title, String genre, double rating, int sumOfRate) {
         this.title = title;
         this.genre = genre;
         this.rating = rating;
@@ -13,9 +15,13 @@ public class Film {
 
     }
 
-//    public double rateFilm(double userRate) {                                     // метод, принимающий оценку юзера на фильм и присваивающий новый рейтинг для фильма
+    /**
+     * метод, принимающий оценку юзера на фильм и присваивающий новый рейтинг для фильма
+     */
+
+//    public double rateFilm(double userRate) {
 //        double newRate;
-//        if FilmLibrary filmLibrary sumOfRate == 0 {                               // обратиться к sumOfRate элемента списка filmLibrary
+//        if main.java.entity.FilmLibrary filmLibrary sumOfRate == 0 {
 //
 //        }
 //        newRate =
@@ -23,9 +29,11 @@ public class Film {
 //        return newRate;
 //    }
 
-                                                                                    // далее идут геттеры и сеттеры переменных класса Film
 
-
+    /**
+     *  Ниже сеттеры и геттеры для полей класса main.java.entity.Film
+     * @return
+     */
     public String getTitle() {
         return title;
     }

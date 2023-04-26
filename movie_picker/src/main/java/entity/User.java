@@ -1,3 +1,5 @@
+package main.java.entity;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,29 +19,12 @@ public class User {
 
     public void filmSelection() {
         System.out.println("На основе твоих предпочтений прелагаем к просмотру:");
-
     }
 
-
-
-                                                                    // ниже сеттеры и геттеры для переменных класса User
-//    public String setName(String s) {
-//
-//        return name;
-//    }
-//    public String getName() {
-//        return name;
-//    }
-//
-//
-//
-//    public String setFavouriteGenre(String s) {
-//        return favouriteGenre;
-//    }
-//    public String getFavouriteGenre() {
-//        return favouriteGenre;
-//    }
-
+    /**
+     * Ниже сеттеры и геттеры для полей Юзера
+     * @return
+     */
 
     public String getName() {
         return name;

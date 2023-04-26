@@ -1,3 +1,7 @@
+package main.java.service;
+
+import main.java.entity.Film;
+
 import java.util.Comparator;
 
 public class SortLibraryOfFilmsByRating implements Comparator<Film> {

@@ -1,5 +1,10 @@
+package main.java.service;
+
+import main.java.entity.Film;
+import main.java.entity.FilmLibrary;
+import main.java.entity.User;
+
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class FilmRecommendationSystem {
     ArrayList<Film> recommendedFilmsHorror = new ArrayList<Film>();
@@ -8,7 +13,7 @@ public class FilmRecommendationSystem {
     ArrayList<Film> recommendedFilmsMelodrama = new ArrayList<Film>();
 
 
-    FilmLibrary filmLibrary = new FilmLibrary();                                            // обращаюсь к классу FilmLibrary путём создания его объекта в этом классе
+    FilmLibrary filmLibrary = new FilmLibrary();                                            // обращаюсь к классу main.java.entity.FilmLibrary путём создания его объекта в этом классе
 
 
 

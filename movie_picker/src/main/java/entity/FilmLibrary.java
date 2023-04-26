@@ -1,6 +1,9 @@
+package main.java.entity;
+
+import main.java.service.SortLibraryOfFilmsByRating;
+
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.function.ToDoubleFunction;
 
 public class FilmLibrary {
 
