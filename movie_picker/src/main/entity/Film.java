@@ -4,14 +4,14 @@ public class Film {
     private String title;
     private String genre;
     private Double rating;
-    private int sumOfRate;
+    private int amountOfUserRates;
     private double userRate;
 
-    public Film (String title, String genre, double rating, int sumOfRate) {
+    public Film (String title, String genre, double rating, int amountOfUserRates) {
         this.title = title;
         this.genre = genre;
         this.rating = rating;
-        this.sumOfRate = sumOfRate;
+        this.amountOfUserRates = amountOfUserRates;
 
     }
 
@@ -21,7 +21,7 @@ public class Film {
 
 //    public double rateFilm(double userRate) {
 //        double newRate;
-//        if main.java.entity.FilmLibrary filmLibrary sumOfRate == 0 {
+//        if (FilmLibrary filmLibrary amountOfUserRates == 0) {
 //
 //        }
 //        newRate =
@@ -58,12 +58,12 @@ public class Film {
         this.rating = rating;
     }
 
-    public int getSumOfRate() {
-        return sumOfRate;
+    public int getAmountOfUserRates() {
+        return amountOfUserRates;
     }
 
-    public void setSumOfRate(int sumOfRate) {
-        this.sumOfRate = sumOfRate;
+    public void setAmountOfUserRates(int sumOfRate) {
+        this.amountOfUserRates = sumOfRate;
     }
 
     public double getUserRate() {
