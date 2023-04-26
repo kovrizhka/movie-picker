@@ -1,18 +1,21 @@
 package main;
 import main.entity.Film;
 import main.entity.FilmLibrary;
+import main.entity.User;
 
 public class Main {
     public static void main(String[] args) {
 
         /**
-         * говорим методу main что есть класс main.java.entity.FilmLibrary (знакомим ёпта)
+         * говорим методу main что есть библиотека фильмов в классе FilmLibrary (знакомим ёпта)
+         * говорим что есть юзер (называем его зрителем)
          */
         FilmLibrary filmLibrary = new FilmLibrary();
+        User viewer = new User();
 
 
         /**
-         * генерим список фильмов путём вызова метода класса main.java.entity.FilmLibrary
+         * генерим список фильмов путём вызова метода класса FilmLibrary
          */
         filmLibrary.filmToLibrary();
 
@@ -22,16 +25,17 @@ public class Main {
          */
         filmLibrary.sortingFilmsByRating();
 
-        for (Film film: filmLibrary.filmLibrary) {                         // вывод в консоль списка фильмов
-            System.out.println("Фильм: "+ film.getTitle() + " с рейтингом: " + film.getRating());
-        }
 
         /**
-         * создаём юзера
+         * вызываем приветствие зрителю
          */
-//        User greet = new User();
-//        greet.greeting();
+        viewer.greeting();
 
+
+        /**
+         * показываем фильмы на основе приветствия
+         */
+        viewer.filmSelection();
 
 
 

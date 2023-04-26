@@ -7,7 +7,7 @@ public class Film {
     private int amountOfUserRates;
     private double userRate;
 
-    public Film (String title, String genre, double rating, int amountOfUserRates) {
+    public Film (String title, String genre, double rating) {
         this.title = title;
         this.genre = genre;
         this.rating = rating;
@@ -16,22 +16,25 @@ public class Film {
     }
 
     /**
-     * метод, принимающий оценку юзера на фильм и присваивающий новый рейтинг для фильма
+     * Метод, принимающий оценку юзера на фильм и присваивающий новый рейтинг для фильма.
+     * -необходим массив, хранящий КАЖДУЮ оценку на КАЖДЫЙ фильм (это по-хорошему)
+     * но, т.к. условия заказчика позволяют делать грязь, я реализую это следующим образом:
      */
 
-//    public double rateFilm(double userRate) {
-//        double newRate;
-//        if (FilmLibrary filmLibrary amountOfUserRates == 0) {
-//
-//        }
-//        newRate =
-//
-//        return newRate;
-//    }
+    public void rateFilm(double userRate) {
+        double newRate;
+        if (getRating() == 0) {
+
+
+        }
+        newRate = 5;
+
+        setRating(newRate);
+    }
 
 
     /**
-     *  Ниже сеттеры и геттеры для полей класса main.java.entity.Film
+     *  Ниже сеттеры и геттеры для полей класса Film
      * @return
      */
     public String getTitle() {
@@ -56,14 +59,6 @@ public class Film {
 
     public void setRating(Double rating) {
         this.rating = rating;
-    }
-
-    public int getAmountOfUserRates() {
-        return amountOfUserRates;
-    }
-
-    public void setAmountOfUserRates(int sumOfRate) {
-        this.amountOfUserRates = sumOfRate;
     }
 
     public double getUserRate() {

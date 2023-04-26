@@ -7,7 +7,7 @@ public class User {
     private String name;
     private String favouriteGenre;
 
-    ArrayList<Film> watchedFilm = new ArrayList<Film>();
+    FilmLibrary filmLibrary = new FilmLibrary();
     Scanner sc = new Scanner(System.in);
 
     public void greeting() {
@@ -17,9 +17,21 @@ public class User {
         setFavouriteGenre(sc.nextLine());
     }
 
+    /**
+     *  Подбиратель фильмов
+     *  тут в зависимости от выбранного жанра нужно пройтись по массиву filmLibrary
+     *  и вытянуть оттуда фильмы подходящего жанра в новый массив,
+     *  который уже будет через цикл выведен пользователю в данном методе
+     */
     public void filmSelection() {
-        System.out.println("На основе твоих предпочтений прелагаем к просмотру:");
+        System.out.println("На основе твоих предпочтений предлагаем к просмотру:");
+        for (Film film: filmLibrary.filmLibrary) {
+            System.out.println("Фильм: "+ film.getTitle() + " с рейтингом: " + film.getRating());
+        }
     }
+
+
+
 
     /**
      * Ниже сеттеры и геттеры для полей Юзера
