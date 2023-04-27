@@ -38,6 +38,11 @@ public class Main {
         viewer.filmSelection();
 
 
+        for (Film film: viewer.getFilmsByGenre()) {
+            System.out.println(film.getTitle());
+        }
+
+
 
     }
 }

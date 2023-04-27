@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class User {
     private String name;
     private String favouriteGenre;
+    ArrayList<Film> filmsByGenre = new ArrayList<Film>();
 
     FilmLibrary filmLibrary = new FilmLibrary();
     Scanner sc = new Scanner(System.in);
@@ -24,9 +25,14 @@ public class User {
      *  который уже будет через цикл выведен пользователю в данном методе
      */
     public void filmSelection() {
+        for (Film filmInStartLib: filmLibrary.filmLibrary) {
+            if (filmInStartLib.getGenre().toLowerCase().equals(getFavouriteGenre())) {
+                filmsByGenre.add(filmInStartLib);
+            }
+        }
         System.out.println("На основе твоих предпочтений предлагаем к просмотру:");
-        for (Film film: filmLibrary.filmLibrary) {
-            System.out.println("Фильм: "+ film.getTitle() + " с рейтингом: " + film.getRating());
+        for (Film filmInLibByGenre: filmsByGenre) {
+            System.out.println("Фильм: "+ filmInLibByGenre.getTitle() + " с рейтингом: " + filmInLibByGenre.getRating());
         }
     }
 
@@ -52,5 +58,9 @@ public class User {
 
     public void setFavouriteGenre(String favouriteGenre) {
         this.favouriteGenre = favouriteGenre;
+    }
+
+    public ArrayList<Film> getFilmsByGenre() {
+        return filmsByGenre;
     }
 }
