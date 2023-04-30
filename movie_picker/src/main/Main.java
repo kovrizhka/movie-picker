@@ -2,6 +2,9 @@ package main;
 import main.entity.Film;
 import main.entity.FilmLibrary;
 import main.entity.User;
+import main.service.FilmRecommendationSystem;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,20 +13,24 @@ public class Main {
          * говорим методу main что есть библиотека фильмов в классе FilmLibrary (знакомим ёпта)
          * говорим что есть юзер (называем его зрителем)
          */
-        FilmLibrary filmLibrary = new FilmLibrary();
+        FilmLibrary filmLibrary1 = new FilmLibrary();
         User viewer = new User();
+        FilmRecommendationSystem recSys = new FilmRecommendationSystem();
+
+        viewer.setFavouriteGenre("ужас");
+        ArrayList<Film> watchedFilms = new ArrayList<>();
 
 
         /**
          * генерим список фильмов путём вызова метода класса FilmLibrary
          */
-        filmLibrary.filmToLibrary();
+        filmLibrary1.filmToLibrary();
 
 
         /**
          *  сортируем библиотеку фильмов
          */
-        filmLibrary.sortingFilmsByRating();
+        filmLibrary1.sortingFilmsByRating();
 
 
         /**
@@ -35,12 +42,17 @@ public class Main {
         /**
          * показываем фильмы на основе приветствия
          */
-        viewer.filmSelection();
+//         viewer.filmSelection();
 
+        filmLibrary1.rateFilm(7, filmLibrary1.getFilmLibrary().get(3));
 
-        for (Film film: viewer.getFilmsByGenre()) {
-            System.out.println(film.getTitle());
-        }
+        watchedFilms.add(filmLibrary1.getFilmLibrary().get(0));
+
+        viewer.setWatchedFilms(watchedFilms);
+
+        Film recommendFilm = recSys.recomendedFilm(viewer, filmLibrary1);
+
+        System.out.println(recommendFilm.getTitle());
 
 
 

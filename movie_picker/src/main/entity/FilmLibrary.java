@@ -8,7 +8,8 @@ import java.util.Collections;
 public class FilmLibrary {
 
 
-    public ArrayList<Film> filmLibrary = new ArrayList<Film>(21);                               // список фильмов
+
+    public static ArrayList<Film> filmLibrary = new ArrayList<Film>(21);                               // список фильмов
 
 
     public void filmToLibrary() {                                                             //  метод добавления фильмов в список
@@ -39,6 +40,25 @@ public class FilmLibrary {
         Collections.sort(filmLibrary, Collections.reverseOrder(new SortLibraryOfFilmsByRating()));
     }
 
+    /**
+     * Метод, принимающий оценку юзера на фильм и присваивающий новый рейтинг для фильма.
+     * -необходим массив, хранящий КАЖДУЮ оценку на КАЖДЫЙ фильм (это по-хорошему)
+     * но, т.к. условия заказчика позволяют делать грязь, я реализую это следующим образом:
+     */
+
+    public void rateFilm(double userRate, Film film) {
+        FilmLibrary filmLibrary = new FilmLibrary();
+        ArrayList<Film> allFilms = filmLibrary.getFilmLibrary();
+        for (Film filmInLib: allFilms) {
+            if (film.getTitle().equals(filmInLib.getTitle())) {
+                double currentRating = filmInLib.getRating();
+                double finalRating = (currentRating + userRate) / 2;
+                filmInLib.setRating(finalRating);
+                System.out.println("Старый рейтинг: "+ currentRating + ", новый рейтинг: " + filmInLib.getRating());
+            }
+        }
+    }
+
 
     Film iAmLegend = new Film("Я легенда","Ужас",8.1);
     Film strangerThings = new Film("Странные вещи","Ужас",7.6);
@@ -63,6 +83,10 @@ public class FilmLibrary {
     Film twinSitters = new Film("Няньки","Комедия",0);
     Film scaryMovie = new Film("Очень страшное кино","Комедия",0);
     Film dictator = new Film("Диктатор","Комедия",0);
+
+    public ArrayList<Film> getFilmLibrary() {
+        return filmLibrary;
+    }
 
 
 }

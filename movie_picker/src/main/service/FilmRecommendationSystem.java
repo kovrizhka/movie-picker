@@ -5,6 +5,7 @@ import main.entity.User;
 import main.entity.FilmLibrary;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FilmRecommendationSystem {
     ArrayList<Film> recommendedFilmsHorror = new ArrayList<Film>();
@@ -12,12 +13,41 @@ public class FilmRecommendationSystem {
     ArrayList<Film> recommendedFilmsAction = new ArrayList<Film>();
     ArrayList<Film> recommendedFilmsMelodrama = new ArrayList<Film>();
 
+    FilmLibrary filmLibrary = new FilmLibrary();
+    User user = new User();
 
-    FilmLibrary filmLibrary = new FilmLibrary();                                            // обращаюсь к классу main.java.entity.FilmLibrary путём создания его объекта в этом классе
+    public Film recomendedFilm(User user, FilmLibrary filmLibrary) {
+        String userGenre = user.getFavouriteGenre();
+        ArrayList<Film> watchedFilms = user.getWatchedFilms();
+        ArrayList<Film> recommendedFilmsByGenre = new ArrayList<>();
+        ArrayList<Film> finalFilmList = new ArrayList<>();
+        for (Film film: watchedFilms) {
+            if (film.getGenre().toLowerCase().equals(userGenre)) {
+                recommendedFilmsByGenre.add(film);
+            }
+        }
+        for (Film watchedFilm: watchedFilms) {
+            for (Film recommFilm: recommendedFilmsByGenre) {
+                if (!watchedFilm.getTitle().equals(recommFilm.getTitle())) {
+                    finalFilmList.add(recommFilm);
+                }
+            }
+        }
+        if (finalFilmList.isEmpty()) {
+            return null;
+        } else {
+            Collections.sort(finalFilmList, Collections.reverseOrder(new SortLibraryOfFilmsByRating()));
+            return finalFilmList.get(0);
+        }
+    }
 
 
 
-    public void genreDefinition(User user) {                                                // определяю жанр, чтобы запустить определенный метод подбора фильмов для записи их в определенный список
+    /**
+     * определяю жанр, чтобы запустить определенный метод подбора фильмов для записи их в определенный список
+     * @param user
+     */
+    public void genreDefinition(User user) {
         if (user.getFavouriteGenre().toLowerCase().equals("ужас")) {
             horrorSelection(user, filmLibrary);
         }
