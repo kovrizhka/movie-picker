@@ -17,7 +17,6 @@ public class Main {
         User viewer = new User();
         FilmRecommendationSystem recSys = new FilmRecommendationSystem();
 
-        viewer.setFavouriteGenre("ужас");
         ArrayList<Film> watchedFilms = new ArrayList<>();
 
 
@@ -42,17 +41,22 @@ public class Main {
         /**
          * показываем фильмы на основе приветствия
          */
-//         viewer.filmSelection();
+         viewer.filmSelection();
 
-        filmLibrary1.rateFilm(7, filmLibrary1.getFilmLibrary().get(3));
+        /**
+         * запускаем выбор и просмотр фильм - в итоге он будем оценен и добавлен в просметренные
+         */
+        viewer.filmToWatch();
 
-        watchedFilms.add(filmLibrary1.getFilmLibrary().get(0));
-
-        viewer.setWatchedFilms(watchedFilms);
-
-        Film recommendFilm = recSys.recomendedFilm(viewer, filmLibrary1);
-
-        System.out.println(recommendFilm.getTitle());
+//        filmLibrary1.rateFilm(7, filmLibrary1.getFilmLibrary().get(3));
+//
+//        watchedFilms.add(filmLibrary1.getFilmLibrary().get(0));
+//
+//        viewer.setWatchedFilms(watchedFilms);
+//
+//        Film recommendFilm = recSys.recommendedFilm(viewer, filmLibrary1);
+//
+//        System.out.println(recommendFilm.getTitle());
 
 
 

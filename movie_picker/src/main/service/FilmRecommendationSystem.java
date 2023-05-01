@@ -16,7 +16,18 @@ public class FilmRecommendationSystem {
     FilmLibrary filmLibrary = new FilmLibrary();
     User user = new User();
 
-    public Film recomendedFilm(User user, FilmLibrary filmLibrary) {
+
+    /**
+     * Метод даёт рекомендацию фильма, с учетом:
+     * 1) жанра
+     * 2) просмотренных фильмов
+     * 3) сортированный по рейтингу (сначала с высокой оценкой)
+     * Для работы нужны два входных параметра: пользователь и библиотека всех фильмов
+     * @param user - принимает объект класса User для вызова его методов
+     * @param filmLibrary - принимает объект класса FilmLibrary для вызова его методов
+     * @return - возвращает список рекомендуемых фильмов
+     */
+    public Film recommendedFilm(User user, FilmLibrary filmLibrary) {
         String userGenre = user.getFavouriteGenre();
         ArrayList<Film> watchedFilms = user.getWatchedFilms();
         ArrayList<Film> recommendedFilmsByGenre = new ArrayList<>();

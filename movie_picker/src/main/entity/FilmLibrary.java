@@ -46,7 +46,7 @@ public class FilmLibrary {
      * но, т.к. условия заказчика позволяют делать грязь, я реализую это следующим образом:
      */
 
-    public void rateFilm(double userRate, Film film) {
+    public void rateFilm(int userRate, Film film) {
         FilmLibrary filmLibrary = new FilmLibrary();
         ArrayList<Film> allFilms = filmLibrary.getFilmLibrary();
         for (Film filmInLib: allFilms) {
